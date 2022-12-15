@@ -26,7 +26,7 @@ var CONFIG;
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
-  gulp.series(clean, pages, sass, images, inline));
+  gulp.series(clean, pages, sass, images, inline, prepareForDeploy));
 
 // Build emails, run the server, and watch for file changes
 gulp.task('default',
@@ -62,6 +62,17 @@ function pages() {
     }))
     .pipe(inky())
     .pipe(gulp.dest('dist'));
+}
+
+//====== NEW ==============
+function prepareForDeploy(){
+    return gulp.src(['dist/**/*.html', '!dist/index.html'])
+        .pipe($.replace('[[', '{{'))
+        .pipe($.replace(']]', '}}'))
+        .pipe($.rename(function (path) {
+            path.extname = ".hbs"
+        }))
+        .pipe(gulp.dest('dist'));
 }
 
 // Reset Panini's cache of layouts and partials

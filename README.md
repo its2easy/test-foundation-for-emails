@@ -1,3 +1,9 @@
+hbs templates `{{code}}` should be used with square brackets instead
+of curly brackets, example `[[code]]`. They will be converted
+after build.
+
+
+
 # Foundation for Emails Template
 
 [![devDependency Status](https://david-dm.org/zurb/foundation-emails-template/dev-status.svg)](https://david-dm.org/zurb/foundation-emails-template#info=devDependencies)
