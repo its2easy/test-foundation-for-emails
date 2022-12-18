@@ -20,11 +20,12 @@ img{
   border-radius: 40px;
   border-collapse: separate;
   .content-col{
-    padding: 50px 60px 50px 60px;
+    padding: 15px 60px 50px 60px;
   }
 }
 .content-logo{
-  margin-top: -87px; //50 + 75/2
+  margin-top: -52px; //50 + 75/2
+  margin-bottom: 35px;
   img{
     width: 75px !important;
     height: 75px !important;
